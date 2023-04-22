@@ -1,6 +1,3 @@
-const { AuthHeaderDuffel, DUFFEL_BASE } = require("../../GlobalConstants");
-const Notification = require("../model/Notification");
-var axios = require("axios");
 const duffel = require("../middleware/Duffel");
 
 const cancelOrder = async (req, res, next) => {
@@ -73,4 +70,15 @@ const orderChangeRequest = async (req, res, next) => {
   }
 };
 
-module.exports = { cancelOrder, getORder, orderChangeRequest };
+const getServices = async (req, res) => {
+  try {
+    const { orderId } = req.params;
+    console.log(orderId);
+    const data = await duffel.orders.get(orderId);
+    res.status(200).send({ success: true, data });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ success: false, error: error.message });
+  }
+};
+module.exports = { cancelOrder, getORder, orderChangeRequest, getServices };

@@ -14,7 +14,7 @@ const {
 const upload = require("../middleware/Multer");
 
 router.get("/create", upload.none(), getOffers);
-router.post("/search", upload.none(), searchFlights);
+router.post("/search", searchFlights);
 router.get("/fetch", upload.none(), fetchOFfers);
 router.get("/fetch-by-id", upload.none(), getOfferById);
 router.get("/seatmap/:id", upload.none(), getSeatMap);

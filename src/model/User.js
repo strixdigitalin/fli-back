@@ -13,7 +13,10 @@ const User = new mongoose.Schema(
       type: String,
       required: true,
     },
-    emailId: {
+    mobile: Number,
+    gender: String,
+    dob: Date,
+    email: {
       type: String,
       trim: true,
       lowercase: true,

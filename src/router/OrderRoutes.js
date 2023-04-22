@@ -4,6 +4,7 @@ const {
   cancelOrder,
   getORder,
   orderChangeRequest,
+  getServices,
 } = require("../controller/OrderControler");
 const router = express.Router();
 
@@ -15,6 +16,8 @@ const upload = require("../middleware/Multer");
 router.post("/cancel/:ORDER_ID", upload.none(), cancelOrder);
 router.get("/get/:id", getORder);
 router.post("/change", upload.none(), orderChangeRequest);
+router.get("/service/:orderId", upload.none(), getServices);
+router.post("/create", createBooking);
 
 const WalletRouter = router;
 module.exports = WalletRouter;

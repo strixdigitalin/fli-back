@@ -5,7 +5,8 @@ const DUFFEL_BASE = "https://api.duffel.com/air";
 const AuthHeaderDuffel = {
   "Duffel-Version": "v1",
   Authorization:
-    "Bearer duffel_test_BwJrtGR8AhhQEmPHH5As4DmCl3pLtIpTD4gcqYk2uVl",
+    // "Bearer duffel_live_HLWbLH5baISHMnGCBiIykL9nSZn1_xs6znVJvpFFqJ0",
+    "Bearer duffel_test_oj0MQHJVFnb2I-1ib5zDLB0XUruml2M7Hun4BtzVovg",
 };
 
 const STRIPE_PUBLISHED_KEY =
