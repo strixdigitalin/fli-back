@@ -15,29 +15,15 @@ let mailDetails = (otp) => {
     from: MAIEL_ID,
     to: "",
     subject: "Vefiy your account",
-    text: "This is your otp" + otp,
+    html: "<div style='color:white;display:flex;justify-content:center;width:100%'>Your Order has been confirmed</div>",
   };
   // html: "",
 };
-let ForgetPAsswordDetails = (data) => {
-  console.log(data._id);
-  link = `${process.env.FRONTEND_URL}/` + data._id + "/" + data.jwtToken;
-  return {
-    from: process.env.MAIEL_ID,
-    to: "lakheraakshay1@gmail.com",
-    subject: "Vefiy your account",
-    //   text: "Node.js testing mail for GeeksforGeeks",
-    html:
-      "<div style='color:white;display:flex;justify-content:center;width:100%'><a href=" +
-      link +
-      "> <button style='width:300px;padding:10px'>Reset Password</button></a></div>",
-  };
-};
 
-const sendMail = (email, otp, callBack) => {
+const sendMail = (email, data, callBack) => {
   mailTransporter.sendMail(
     {
-      ...mailDetails(otp),
+      ...mailDetails(data),
       to: email,
     },
     function (err, data) {
@@ -51,20 +37,5 @@ const sendMail = (email, otp, callBack) => {
     }
   );
 };
-const ForgetPasswordMail = (data) => {
-  mailTransporter.sendMail(
-    {
-      ...ForgetPAsswordDetails(data),
-      to: data.email,
-    },
-    function (err, data) {
-      if (err) {
-        console.log("Error Occurs", err);
-      } else {
-        console.log("Email sent successfully");
-      }
-    }
-  );
-};
 
-module.exports = { sendMail, ForgetPasswordMail };
+module.exports = { sendMail };

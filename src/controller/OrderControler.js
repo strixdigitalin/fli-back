@@ -81,4 +81,36 @@ const getServices = async (req, res) => {
     res.status(400).send({ success: false, error: error.message });
   }
 };
-module.exports = { cancelOrder, getORder, orderChangeRequest, getServices };
+
+const getAllORders = async (req, res) => {
+  try {
+    let orders = duffel.orders.list({
+      after: "g2wAAAACbQAAABBBZXJvbWlzdC1LaGFya2l2bQAAAB=",
+      before: "g2wAAAACbQAAABBBZXJvbWlzdC1LaGFya2l2bQAAAB=",
+      limit: 1,
+      booking_reference: "RZPNX8",
+      awaiting_payment: false,
+      sort: "payment_required_by",
+      "owner_id[]": [
+        "arl_00009VME7DBKeMags5CliQ",
+        "arl_00009VME7DCOaPRQvNhcMu",
+      ],
+      "origin_id[]": ["arp_lhr_gb", "arp_jfk_us"],
+      "destination_id[]": ["arp_lhr_gb", "arp_jfk_us"],
+      "passenger_name[]": ["Earhart", "Smith"],
+      requires_action: true,
+    });
+    res
+      .status(200)
+      .send({ success: true, message: "Orders Fetched", data: orders });
+  } catch (error) {
+    res.status(400).send({ success: false, message: error, error });
+  }
+};
+module.exports = {
+  cancelOrder,
+  getORder,
+  orderChangeRequest,
+  getServices,
+  getAllORders,
+};

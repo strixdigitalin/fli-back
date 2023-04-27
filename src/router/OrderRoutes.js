@@ -5,6 +5,7 @@ const {
   getORder,
   orderChangeRequest,
   getServices,
+  getAllORders,
 } = require("../controller/OrderControler");
 const router = express.Router();
 
@@ -18,6 +19,7 @@ router.get("/get/:id", getORder);
 router.post("/change", upload.none(), orderChangeRequest);
 router.get("/service/:orderId", upload.none(), getServices);
 router.post("/create", createBooking);
+router.get("/order", getAllORders);
 
 const WalletRouter = router;
 module.exports = WalletRouter;
