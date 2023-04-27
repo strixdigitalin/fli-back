@@ -16,7 +16,7 @@ const STRIPE_SECRET_KEY =
 
 const FRONTEND_URL = "http://localhost:3000";
 const MAIEL_ID = "lakheraakshay@gmail.com";
-const PASSWORD = "frkvlmfmxpyeucxf";
+const PASSWORD = "lkocyakupdjnvuat";
 
 module.exports = {
   JWT_SECRET,

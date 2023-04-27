@@ -170,19 +170,13 @@ const getSeatMap = async (req, res, next) => {
   }
 };
 const searchFlights = async (req, res, next) => {
-  const { ORIGIN, DESTINATION, DATE, CABIN, PASSENGERS } = req.body;
+  const { ORIGIN, DESTINATION, DATE, CABIN, PASSENGERS,slices } = req.body;
 
   // res.status(200).send(req.body);
   console.log(req.body, "<<<this is body");
   try {
     const data = await duffel.offerRequests.create({
-      slices: [
-        {
-          origin: ORIGIN,
-          destination: DESTINATION,
-          departure_date: DATE,
-        },
-      ],
+      slices: slices,
       passengers: PASSENGERS,
       // passengers: [{ type: "adult" }, { type: "adult" }, { age: 1 }],
       cabin_class: CABIN,
