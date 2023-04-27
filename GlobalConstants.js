@@ -9,11 +9,6 @@ const AuthHeaderDuffel = {
     "Bearer duffel_test_oj0MQHJVFnb2I-1ib5zDLB0XUruml2M7Hun4BtzVovg",
 };
 
-const STRIPE_PUBLISHED_KEY =
-  "pk_test_51LvRExSIN5fQiccBSd6yIzTwcqvxNHBOZEnG6LMPb6xKJoj3itueNsk2AAOZJhYyHSawl81wfp6TGgBbKbtdcOTR00vWjaJw03";
-const STRIPE_SECRET_KEY =
-  "sk_test_51LvRExSIN5fQiccBKZiKsLwkFGViyecO66rrplY4k4uRDv7LhBJAfgJIJ6lYZqQIYkrzJRQH052co3qPT0CgxbnH00X4AUc3lQ";
-
 const FRONTEND_URL = "http://localhost:3000";
 const MAIEL_ID = "lakheraakshay@gmail.com";
 const PASSWORD = "lkocyakupdjnvuat";
