@@ -16,7 +16,7 @@ app.use("/auth", AuthRoutes);
 app.use("/user", UserRoutes);
 app.use("/blog", BlogRoutes);
 // app.use("/user", UserRoutes);
-// app.use("/flight/offer",OfferRoutes)
+// app.use("/flight/offer",OfferRoutes)dd
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
